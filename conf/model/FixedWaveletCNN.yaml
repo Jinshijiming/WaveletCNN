@@ -1,0 +1,5 @@
+kernel_size: 11
+rate: 8
+dims: [ 64, 64, 64, 64 ]
+wavelet: morl # morl | mexh | cmor1.5-1.0 | morlet | mexican_hat
+n_scales: 32

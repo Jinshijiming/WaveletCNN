@@ -1,0 +1,118 @@
+##*****默认参数设置
+"RML_2016a":
+  #128
+  path: /home/zjut/public/bsh/Dataset/128/
+  data:
+    train: radio11CTrainX.npy
+    val: radio11CValX.npy
+    test: radio11CTestX.npy
+  label:
+    train: radio11CTrainSnrY.npy
+    val: radio11CValSnrY.npy
+    test: radio11CTestSnrY.npy
+  split:
+    train: 0.8
+    val:
+    test:
+  num_classes: 11
+  num_channel: 2
+  length: 128
+  classes: [ "8PSK", "AM-DSB", "AM-SSB", "BPSK", "CPFSK", "GFSK", "4PAM", "16QAM", "64QAM", "QPSK", "WBFM" ]
+
+"RML_2016b":
+  #128b
+  path: /home/zjut/public/bsh/Dataset/RML2016b/
+  data:
+    train: radio10CTrainX.npy
+    val: radio10CValX.npy
+    test: radio10CTestX.npy
+  label:
+    train: radio10CTrainSnrY.npy
+    val: radio10CValSnrY.npy
+    test: radio10CTestSnrY.npy
+  split:
+    train: 0.8
+    val:
+    test:
+  num_classes: 10
+  num_channel: 2
+  length: 128
+  classes: [ '8PSK', 'AM-DSB', 'BPSK', 'CPFSK', 'GFSK', '4PAM', '16QAM', '64QAM', 'QPSK', 'WBFM' ]
+
+"RML_2018a":
+  #1024
+  path: /home/zjut/public/bsh/Dataset/1024/
+  data:
+    train: radio24CTrainX.npy
+    val: radio24CValX.npy
+    test: radio24CTestX.npy
+  label:
+    train: radio24CTrainSnrY.npy
+    val: radio24CValSnrY.npy
+    test: radio24CTestSnrY.npy
+  split:
+    train: 0.2
+    val: 0.2
+    test: 0.6
+  num_classes: 24
+  num_channel: 2
+  length: 1024
+  classes: [ 'OOK', '4ASK', '8ASK', 'BPSK', 'QPSK', '8PSK', '16PSK', '32PSK', '16APSK', '32APSK', '64APSK', '128APSK', '16QAM', '32QAM', '64QAM', '128QAM', '256QAM', 'AM-SSB-WC', 'AM-SSB-SC', 'AM-DSB-WC', 'AM-DSB-SC', 'FM', 'GMSK', 'OQPSK' ]
+
+"Sig2019_12":
+  #512
+  path: /public/MountData/DataDir/bsh/36InstituteData/Sig2019-12/
+  data:
+    train: radio12CNormTrainX.npy
+    val: radio12CNormValX.npy
+    test: radio12CNormTestX.npy
+  label:
+    train: radio12CNormTrainSnrY.npy
+    val: radio12CNormValSnrY.npy
+    test: radio12CNormTestSnrY.npy
+  split:
+    train:
+    val:
+    test:
+  num_classes: 12
+  num_channel: 2
+  length: 512
+  classes: [ 'BPSK', 'QPSK', '8PSK', 'OQPSK', '2FSK', '4FSK', '8FSK', '16QAM', '32QAM', '64QAM', '4PAM', '8PAM' ]
+
+"HKDD36":
+  #1024
+  path: /home/zjut/public/bsh/Dataset/HKDD36
+  data:
+    train: TrainX.npy
+    val: ValX.npy
+    test: TestX.npy
+  label:
+    train: TrainSnrY.npy
+    val: ValSnrY.npy
+    test: TestSnrY.npy
+  split:
+    train:
+    val:
+    test:
+  num_classes: 36
+  num_channel: 2
+  length: 1024
+  classes: [ 'BPSK', 'QPSK', '8PSK', 'OQPSK', '16PSK', '32PSK', '2FSK', '4FSK', '8FSK', '16QAM', '32QAM', '64QAM', '128QAM', '256QAM', '16APSK', '32APSK', '64APSK', '128APSK', '256APSK', '4PAM', '8PAM', '16PAM', 'MSK', 'GMSK', '4CPM', '8CPM', 'OFDM-BPSK', 'OFDM-QPSK', 'OFDM-16QAM', 'AM', 'FM', 'OOK', '4ASK', '8ASK', 'AM-MSK', 'FM-MSK' ]
+
+  over_sampling: 1
+  constellation_size: 64 #星座图大小
+
+"TechRec":
+  path: /home/zjut/public/bsh/Dataset/TechRec/
+  split:
+    train: 0.6
+    val: 0.2
+    test: 0.2
+  SNR:
+    min: -15
+    max: 20
+    step: 5
+  num_classes: 3
+  num_channel: 2
+  length: 1024
+  classes: [ "LTE", "WF", "DVBT" ]

@@ -1,0 +1,12 @@
+
+
+d_model: 512
+d_ff: 2048
+n_heads: 8
+e_layers: 1
+factor: 1
+dropout: 0.1
+
+activation: gelu
+output_attention: False
+use_norm: False

@@ -1,0 +1,12 @@
+
+L: 16
+R: 8
+d_model: 64
+d_ff: 128
+e_layers: 4
+n_heads: 4
+
+dropout: 0.5
+activation: gelu
+use_cls: False
+use_pos: True

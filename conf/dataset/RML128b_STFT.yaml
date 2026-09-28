@@ -1,0 +1,13 @@
+batch_size: 128
+epochs: 50
+SNR: all #all代表全数据集
+norm: True
+use_extra_T: True
+
+num_classes: 10
+num_channel: 1
+length: 128
+
+in_len: 128 #等同于length
+in_chn: 1 #等同于num_channel
+out_chn: 10 #等同于num_classes

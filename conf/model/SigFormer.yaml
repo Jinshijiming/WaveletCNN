@@ -1,0 +1,4 @@
+channels: [ 8, 16, 32, 64 ]
+seg_lens: [ 2, 2, 3, 3 ]
+strides: [ 2, 2, 2, 2 ]
+num_heads: 4

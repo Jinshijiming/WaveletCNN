@@ -1,0 +1,4 @@
+hidden_size: 64
+kernel_size: 65
+d_ff: 128
+num_heads: 4

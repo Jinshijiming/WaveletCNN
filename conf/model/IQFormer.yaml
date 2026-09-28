@@ -1,0 +1,13 @@
+layers: [2,3,2]  #[3,3,3]
+embed_dims: [64,64,64]
+mlp_ratios: 4
+
+down_patch_size: 3
+down_stride: 2
+down_pad: 1
+drop_rate: 0.2
+drop_path_rate: 0  #0/0.2
+use_layer_scale: False
+layer_scale_init_value: 1e-5
+fork_feat: False
+vit_num: 1

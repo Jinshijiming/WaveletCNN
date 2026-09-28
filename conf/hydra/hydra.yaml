@@ -1,0 +1,22 @@
+run:
+  dir: . #version仅用于 单运行  .代表不创建目录
+sweep:
+  dir: outputs  #多运行模式，因为hydra解析sweep时还未组合所有yaml所以把${model.name}写在子目录
+
+  #还是不用${hydra.job.override_dirname}做子目录了
+  #1.对于数据集方法比较没有帮助
+  #2.名字太长也没人看
+  subdir: ${model.name}/${version} #${hydra.job.override_dirname}
+
+output_subdir: .hydra  # null（不保存hydra.yaml）/.hydra
+launcher:
+  #TODO:并行任务时，延迟启动（实现不同gpu的选择）
+  pre_dispatch: 3 #mutirun模式下最大并行的任务数
+job:
+  chdir: null
+  config:
+    override_dirname:
+      kv_sep: '='
+      item_sep: ','
+      exclude_keys: []
+

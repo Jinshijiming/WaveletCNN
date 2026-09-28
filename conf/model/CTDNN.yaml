@@ -1,0 +1,4 @@
+num_kernel: 256
+num_layers: 2
+num_heads: 2
+ff_dim: 512

@@ -1,0 +1,43 @@
+##*****默认参数设置
+#命令行中数值字符串输入方法，所以尽量避免用数值做字符串
+#2. To use it as string, quote the value: key=\'value1,value2\'
+defaults:
+  - _self_
+  - hydra: hydra
+  - model: IQGCA
+  - dataset: 'RML128'
+    #覆盖相同项，组合不同项，不能完全override
+    #使用stdout 将job_logging（配置组 ==文件夹）的default(默认配置 ==文件)覆盖掉
+    #override 只能覆盖defaults中已有的默认配置 eg：override model:lstm
+  - override hydra/job_logging: stdout
+  - override hydra/launcher: joblib #Dataloader需要添加 multiprocessing_context='fork'参数，来兼容joblib并行
+
+#  ${version:outputs/${model.name},${dataset.name},${suffix}}
+#  1.自动生成版本号: dataset.name__{pattern}{num}
+#  2.加载指定版本号的配置和权重,版本号为outputs目录下的文件夹名，同时需要指定model 
+#    如此才能确定具体路径见下面path
+#    有效的命令行参数：model、version、mode、device
+#    用法：python run.py model=MCLDNN version=TechRec__version_1 general.mode=Test
+#  version被hydra配置调用          #
+suffix: version #仅用于version
+version: ${version:outputs/${model.name},${dataset.name},${suffix}}
+general:
+  device: 0,1,2,3,4,5,6,7 #'0-7'设置cuda程序的可见设备/cpu\
+  optim: adamw #sgd/adam/adamw
+  lr_scheduler: ReduceLROnPlateau # StepLR/ReduceLROnPlateau/cos_warm
+  lr: 0.001
+  num_workers: 8
+  random_seed: None #固定随机种子，None表示不固定
+  mode: Train #Train/Test
+  debug_size: 0
+  is_early_stop: True
+  criterion: CE
+
+model:
+  name: ${hydra:runtime.choices.model}
+dataset:
+  name: ${hydra:runtime.choices.dataset}
+path:
+  output_dir: outputs/${model.name}/${version}
+name:
+  file_name_compare: ${hydra:runtime.choices.dataset}

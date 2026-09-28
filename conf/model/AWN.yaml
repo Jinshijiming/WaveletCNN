@@ -1,0 +1,4 @@
+hid_chn: 64
+levels: 4
+lambda1: 0.01
+lambda2: 0.01

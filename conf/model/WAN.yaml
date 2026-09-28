@@ -1,0 +1,4 @@
+hidden_size: 256
+wavelet: 'db8'
+levels: 4
+hid_dim: 64

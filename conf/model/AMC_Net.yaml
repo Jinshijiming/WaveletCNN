@@ -1,0 +1,4 @@
+extend_channel: 36
+latent_dim: 512
+num_heads: 2
+conv_chan_list: [ 36, 64, 128, 256 ]

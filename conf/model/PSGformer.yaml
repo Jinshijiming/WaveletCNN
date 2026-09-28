@@ -1,0 +1,14 @@
+m: 16
+t: 1
+fre_kernel: 4
+d_model: 64
+d_ff: 128
+e_layers: 4
+n_heads: 8
+
+dropout: 0.1
+activation: gelu
+norm: ln
+use_conv: True
+use_cls: False
+use_pos: False
